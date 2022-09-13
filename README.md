@@ -1,4 +1,8 @@
 ## Olá meu nome é Abel Gasque, criador de conteúdo de programação e tecnologia!
+Fundador na Gasque IT Services
+Engenheiro de software na PTC Group
+Bacharelado em Sistemas de Informação
+
 <div align="center">
   <a href="https://github.com/abelgasque">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=abelgasque&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
