@@ -1,4 +1,9 @@
-## Olá meu nome é Abel Gasque, desenvolvedor de software.
+## Olá mundo!
+
+Eu sou Abel Gasque, tenho 22 anos de idade, formado no FIESC - SENAI com ensino médio integrado ao curso técnico de informática e graduando o curso de Sistema de Infomação. Atualmente sou engenheiro de software na PTC Group, alocado em uma fintech como desenvolvedor back-end.
+
+Em 2022 fundei meu empreendimento GASQUE ENTERPRISE AND INFORMATION TECHNOLOGY SERVICES LTDA . Com objetivo de prestar meus serviços de desenvolvimento de software para clientes e parceiros como pessoa jurídica.
+
 
 <div align="center">
   <a href="https://github.com/abelgasque">
@@ -19,7 +24,7 @@
  
 <div> 
   <a href="https://instagram.com/abelgasque.dev" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
- 	<a href = "mailto:gasque.it.services.oficial@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+ 	<a href = "mailto:contato@abelgasque.dev"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
   <a href="https://www.linkedin.com/in/abelgasque" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
  
 </div>
