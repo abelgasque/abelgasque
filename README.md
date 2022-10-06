@@ -1,9 +1,8 @@
 ## Olá mundo!
 
-Eu sou Abel Gasque, tenho 22 anos de idade, formado no FIESC - SENAI com ensino médio integrado ao curso técnico de informática e graduando o curso de Sistema de Infomação. Atualmente sou engenheiro de software na PTC Group, alocado em uma fintech como desenvolvedor back-end.
+Eu sou Abel Gasque, tenho 22 anos de idade, formado no FIESC - SENAI com ensino médio integrado ao curso técnico de informática e graduando o curso de Sistema de Infomação. 
 
-Em 2022 fundei meu empreendimento GASQUE ENTERPRISE AND INFORMATION TECHNOLOGY SERVICES LTDA . Com objetivo de prestar meus serviços de desenvolvimento de software para clientes e parceiros como pessoa jurídica.
-
+Sou um desenvolvedor full-stack com .Net + Angular.
 
 <div align="center">
   <a href="https://github.com/abelgasque">
