@@ -1,9 +1,10 @@
-# 💫 Sobre:
-Sou um desenvolvedor de software sênior. <br>
-5+ anos atuando com tecnologia.<br>Cursando Sistemas de Informação na Estácio. <br>
-Técnico em desenvolvimento de sistemas no SENAI.
+# 💫 About:
+I'm a senior software developer. <br>
+5+ years working with technology.<br> 
+Studying Information Systems at Estácio. <br>
+Systems development technician at SENAI.
 
-# 🌐 Redes Sociais:
+# 🌐 Social Media:
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](htttps://discord.gg/nwgxQuuxmY)
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://www.facebook.com/profile.php?id=100083491787419) 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/abelgasque.dev) 
@@ -12,7 +13,7 @@ Técnico em desenvolvimento de sistemas no SENAI.
 [![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?logo=Twitch&logoColor=white)](https://twitch.tv/abelgasque) 
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/abelgasque) 
 
-# 💻 Conhecimentos:
+# 💻 Hard Skills:
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white) 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
@@ -48,7 +49,7 @@ Técnico em desenvolvimento de sistemas no SENAI.
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white) 
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-# 📊 Estatísticas:
+# 📊 Statistics:
 ![](https://github-readme-stats.vercel.app/api?username=abelgasque&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=abelgasque&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=abelgasque&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
