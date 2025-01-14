@@ -1,16 +1,10 @@
 # 💫 About:
-I'm a senior software developer. <br>
+I'm a software developer. <br>
 5+ years working with technology.<br> 
-Studying Information Systems at Estácio. <br>
-Systems development technician at SENAI.
 
 # 🌐 Social Media:
-[![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/nwgxQuuxmY)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836.svg?logo=gmail&logoColor=white)](mailto:contato.abelgasque@gmail.com)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/abelgasque.dev) 
+[![Gmail](https://img.shields.io/badge/Gmail-D14836.svg?logo=gmail&logoColor=white)](mailto:abelgasque20@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/abelgasque) 
-[![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/12765033)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-%23239120.svg?logo=WhatsApp&logoColor=white)]([https://twitter.com/abelgasque](https://api.whatsapp.com/send?phone=5548991377315))
 
 # 💻 Hard Skills:
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white) 
