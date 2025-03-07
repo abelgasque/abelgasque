@@ -18,7 +18,7 @@ jobs:
       run: |
         curl -H "Content-Type: application/json" \
         -X POST \
-        -d '{"username": "Bot GitHub", "content": "🚀 **Build iniciado!**\nRepositório: `${{ github.repository }}`\nAmbiente: Desenvolvimento\nBranch: `${{ github.ref_name }}`"}' \
+        -d '{"username": "Bot GitHub", "content": "🚀 **Build iniciado!**\nRepositório: `${{ github.repository }}`\nAmbiente: Produção\nBranch: `${{ github.ref_name }}`"}' \
         ${{ secrets.DISCORD_WEBHOOK_URL }} || true
     
     - name: Notify Telegram (Build Started)
@@ -26,7 +26,7 @@ jobs:
         curl -s -X POST \
         https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
         -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
-        -d text="🚀 **Build iniciado!**\nRepositório: `${{ github.repository }}`\nAmbiente: Desenvolvimento\nBranch: `${{ github.ref_name }}`" || true
+        -d text="🚀 **Build iniciado!**\nRepositório: `${{ github.repository }}`\nAmbiente: Produção\nBranch: `${{ github.ref_name }}`" || true
 
     - name: Setup Node.js
       uses: actions/setup-node@v2
@@ -68,7 +68,7 @@ jobs:
       run: |
         curl -H "Content-Type: application/json" \
         -X POST \
-        -d '{"username": "Bot GitHub", "content": "✅ **Sucesso ao gerar versão!**\nRepositório: `${{ github.repository }}`\nAmbiente: Desenvolvimento\nBranch: `${{ github.ref_name }}`"}' \
+        -d '{"username": "Bot GitHub", "content": "✅ **Sucesso ao gerar versão!**\nRepositório: `${{ github.repository }}`\nAmbiente: Produção\nBranch: `${{ github.ref_name }}`"}' \
         ${{ secrets.DISCORD_WEBHOOK_URL }}
 
     - name: Notify Telegram (Success)
@@ -77,14 +77,14 @@ jobs:
         curl -s -X POST \
         https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
         -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
-        -d text="✅ **Sucesso ao gerar versão!**\nRepositório: `${{ github.repository }}`\nAmbiente: Desenvolvimento\nBranch: `${{ github.ref_name }}`"
+        -d text="✅ **Sucesso ao gerar versão!**\nRepositório: `${{ github.repository }}`\nAmbiente: Produção\nBranch: `${{ github.ref_name }}`"
 
     - name: Notify Discord (Failure)
       if: failure()
       run: |
         curl -H "Content-Type: application/json" \
         -X POST \
-        -d '{"username": "Bot GitHub", "content": "❌ **Falha ao gerar versão!**\nRepositório: `${{ github.repository }}`\nAmbiente: Desenvolvimento\nBranch: `${{ github.ref_name }}`"}' \
+        -d '{"username": "Bot GitHub", "content": "❌ **Falha ao gerar versão!**\nRepositório: `${{ github.repository }}`\nAmbiente: Produção\nBranch: `${{ github.ref_name }}`"}' \
         ${{ secrets.DISCORD_WEBHOOK_URL }}
 
     - name: Notify Telegram (Failure)
@@ -93,4 +93,4 @@ jobs:
         curl -s -X POST \
         https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
         -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
-        -d text="❌ **Falha ao gerar versão!**\nRepositório: `${{ github.repository }}`\nAmbiente: Desenvolvimento\nBranch: `${{ github.ref_name }}`"
+        -d text="❌ **Falha ao gerar versão!**\nRepositório: `${{ github.repository }}`\nAmbiente: Produção\nBranch: `${{ github.ref_name }}`"
