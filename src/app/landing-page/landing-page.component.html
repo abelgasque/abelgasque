@@ -1,0 +1,103 @@
+<header *ngIf="this.themeConfig.theme !== 'horizontal'" class="{{ openClass }}" [ngClass]="mobileHeaderClass"
+  (clickOutside)="openClass = ''">
+  <div class="container">
+    <!-- menu icon -->
+    <div class="menu-icon d-inline-flex mr-4">
+      <button (click)="openClass = openClass === 'open' ? '' : 'open'">
+        <span></span>
+      </button>
+    </div>
+    <!-- logo image -->
+    <div class="site-logo">
+      <span routerLink="/" class="copyright">{{ this.name }}</span>
+    </div>
+  </div>
+</header>
+
+<header *ngIf="this.themeConfig.theme === 'horizontal'" [ngClass]="desktopHeaderClass"
+  (window:resize)="onResize($event)">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg" [ngClass]="horizontalNavClass">
+      <a class="navbar-brand" routerLink="/">
+        <span class="copyright">{{ this.name }}</span>
+      </a>
+      <button (click)="collapsedCardToggle()" aria-controls="navbarNavDropdown" aria-expanded="false"
+        aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNavDropdown" data-toggle="collapse"
+        type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse" id="navbarNavDropdown" [@collapsedCard]="collapsedCard">
+        <ul class="navbar-nav ml-auto scrollspy">
+          <li class="nav-item" [ngClass]="{ active: currentSection === item.id }" (click)="scrollTo(item.id)"
+            *ngFor="let item of listMenu">
+            <a href="javascript:" class="nav-link" [ngClass]="{ active: currentSection === item.id }">
+              <i *ngIf="this.themeConfig.theme !== 'horizontal'" class="{{item.icon}}"></i>
+              <span *ngIf="this.themeConfig.theme !== 'collapsed'">{{item.name}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<header *ngIf="this.themeConfig.theme !== 'horizontal'" class="d-flex align-items-start flex-column {{ openClass }}"
+  [ngClass]="desktopHeaderClass">
+  <!-- logo image -->
+  <div class="site-logo">
+    <a routerLink="/">
+      <span class="copyright">{{ this.name }}</span>
+    </a>
+  </div>
+
+  <!-- main menu -->
+  <nav>
+    <ul class="vertical-menu scrollspy">
+      <li [ngClass]="{ active: currentSection === item.id }" (click)="scrollTo(item.id)" *ngFor="let item of listMenu">
+        <a href="javascript:" class="nav-link" [ngClass]="{ active: currentSection === item.id }">
+          <i class="{{item.icon}}"></i>
+          <span>{{item.name}}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- site footer -->
+  <div class="footer" style="text-align: center;">
+    <!-- copyright text -->
+    <span class="copyright">Diretórios reservados © {{ currentYear }}</span>
+    <br>
+    <span class="copyright">{{version}}</span>
+  </div>
+</header>
+
+<!-- main layout -->
+<main class="{{ openClass }}" [ngClass]="contentClass">
+
+  <div id="parentDiv" class="main-content" scrollSpy [spiedTags]="['SECTION']"
+    (sectionChange)="onSectionChange($event)">
+    <section id="home" class="home d-flex align-items-center" [ngClass]="{ light: themeConfig.themeType === 'light' }">
+      <app-home class="w-100" [themeType]="themeConfig.themeType"></app-home>
+    </section>
+    <section id="about">
+      <app-about></app-about>
+    </section>
+    <section id="experience">
+      <app-experience></app-experience>
+    </section>
+    <section id="formation">
+      <app-formation></app-formation>
+    </section>
+    <section id="certification">
+      <app-certification></app-certification>
+    </section>
+    <section id="language">
+      <app-language></app-language>
+    </section>
+    <div class="spacer-96"></div>
+  </div>
+  <app-loader></app-loader>
+
+  <!-- Go to top button -->
+  <a href="javascript:" id="return-to-top" (click)="scrollTo('home')"><i class="fas fa-arrow-up"></i></a>
+</main>

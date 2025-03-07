@@ -1,0 +1,27 @@
+<div class="container">
+    <!-- section title -->
+    <h2 class="section-title wow fadeInUp">Licenças e certificados</h2>
+    <div class="spacer-60"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- responsive spacer -->
+            <div class="spacer-30 d-md-none d-lg-none"></div>
+            <!-- timeline wrapper -->
+            <div class="timeline exp bg-white shadow-dark rounded padding-30 overflow-hidden">
+                <!-- timeline item -->
+                <div class="timeline-container wow fadeInUp" *ngFor="let item of listCertification">
+                    <div class="content">
+                        <h3 class="title">{{item.occupation}}</h3>
+                        <span class="time">
+                            {{item.dtStart}} - {{ item.dtEnd}}
+                        </span>
+                        <p class="time">{{item.company}}</p>
+                        <p>{{item.description}}</p>
+                    </div>
+                </div>
+                <!-- main line -->
+                <span class="line"></span>
+            </div>
+        </div>
+    </div>
+</div>
