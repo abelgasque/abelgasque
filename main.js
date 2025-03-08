@@ -1104,72 +1104,64 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_runner_work_abelgasque_abelgasque_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ 8069);
 /* harmony import */ var _home_runner_work_abelgasque_abelgasque_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ 8047);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ 2340);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var src_app_shared_services_pdf_generator_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/pdf-generator.service */ 4955);
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
 
 
 
 
 var AboutComponent = /*#__PURE__*/function () {
-  function AboutComponent(pdfService) {
+  function AboutComponent() {
     (0,_home_runner_work_abelgasque_abelgasque_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, AboutComponent);
 
-    this.pdfService = pdfService;
     this.avatarImg = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.avatarImg;
+    this.cvImg = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.cvImg;
   }
 
   return (0,_home_runner_work_abelgasque_abelgasque_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(AboutComponent, [{
     key: "ngOnInit",
     value: function ngOnInit() {}
-  }, {
-    key: "generate",
-    value: function generate() {
-      this.pdfService.generate();
-    }
   }]);
 }();
 
 AboutComponent.ɵfac = function AboutComponent_Factory(t) {
-  return new (t || AboutComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_pdf_generator_service__WEBPACK_IMPORTED_MODULE_3__.PdfGeneratorService));
+  return new (t || AboutComponent)();
 };
 
-AboutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+AboutComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
   type: AboutComponent,
   selectors: [["app-about"]],
   decls: 21,
-  vars: 1,
-  consts: [[1, "container"], [1, "section-title", "wow", "fadeInUp"], [1, "spacer-60"], [1, "row"], [1, "col-md-3"], [1, "text-center", "text-md-left"], ["alt", "avatar", 3, "src"], [1, "spacer-30", "d-md-none", "d-lg-none"], [1, "col-md-9", "triangle-left-md", "triangle-top-sm"], [1, "rounded", "bg-white", "shadow-dark", "padding-30"], [1, "col-md-12"], [1, "mt-3"], [1, "btn", "btn-default", 3, "click"]],
+  vars: 2,
+  consts: [[1, "container"], [1, "section-title", "wow", "fadeInUp"], [1, "spacer-60"], [1, "row"], [1, "col-md-3"], [1, "text-center", "text-md-left"], ["alt", "avatar", 3, "src"], [1, "spacer-30", "d-md-none", "d-lg-none"], [1, "col-md-9", "triangle-left-md", "triangle-top-sm"], [1, "rounded", "bg-white", "shadow-dark", "padding-30"], [1, "col-md-12"], [1, "mt-3"], ["target", "_blank", 1, "btn", "btn-default", 3, "href"]],
   template: function AboutComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0)(1, "h2", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Sobre");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "div", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 3)(5, "div", 4)(6, "div", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "img", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](8, "div", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "div", 8)(10, "div", 9)(11, "div", 3)(12, "div", 10)(13, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](14, " Ol\xE1 mundo! \uD83D\uDC4B ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](15, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, " Buscando uma posi\xE7\xE3o desafiadora como Desenvolvedor Full Stack ou Back End, com foco nas tecnologias avan\xE7adas, como .NET, NodeJS, NestJS e Angular, para impulsionar a constru\xE7\xE3o e manuten\xE7\xE3o de aplica\xE7\xF5es web em nuvem altamente escal\xE1veis. Comprometido em adquirir novas habilidades e experi\xEAncias profissionais, ofere\xE7o um hist\xF3rico comprovado de produtividade e colabora\xE7\xE3o eficaz, garantindo empatia e adaptabilidade \xE0s necessidades espec\xEDficas da organiza\xE7\xE3o. ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "div", 11)(18, "button", 12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AboutComponent_Template_button_click_18_listener() {
-        return ctx.generate();
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](19, "Download CV");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](20, "div", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0)(1, "h2", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "Sobre");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](3, "div", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "div", 3)(5, "div", 4)(6, "div", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](7, "img", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](8, "div", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "div", 8)(10, "div", 9)(11, "div", 3)(12, "div", 10)(13, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](14, " Ol\xE1 mundo! \uD83D\uDC4B ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](15, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](16, " Buscando uma posi\xE7\xE3o desafiadora como Desenvolvedor Full Stack ou Back End, com foco nas tecnologias avan\xE7adas, como .NET, NodeJS, NestJS e Angular, para impulsionar a constru\xE7\xE3o e manuten\xE7\xE3o de aplica\xE7\xF5es web em nuvem altamente escal\xE1veis. Comprometido em adquirir novas habilidades e experi\xEAncias profissionais, ofere\xE7o um hist\xF3rico comprovado de produtividade e colabora\xE7\xE3o eficaz, garantindo empatia e adaptabilidade \xE0s necessidades espec\xEDficas da organiza\xE7\xE3o. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](17, "div", 11)(18, "a", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](19, "Download CV");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](20, "div", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()()()();
     }
 
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("src", ctx.avatarImg, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsanitizeUrl"]);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("src", ctx.avatarImg, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsanitizeUrl"]);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("href", ctx.cvImg, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsanitizeUrl"]);
     }
   },
   styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhYm91dC5jb21wb25lbnQuc2NzcyJ9 */"]
@@ -2227,10 +2219,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "environment": function() { return /* binding */ environment; }
 /* harmony export */ });
 var environment = {
-  production: true,
-  name: "app",
+  production: false,
+  name: "abelgasque",
   version: "1.0.0",
-  avatarImg: "imageUrl"
+  avatarImg: "assets/images/avatar.jpg",
+  cvImg: "assets/images/cv.pdf"
 };
 
 /***/ }),
