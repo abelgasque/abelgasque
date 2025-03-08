@@ -1,5 +1,5 @@
 export const environment = {
-    production: false,
+    production: true,
     name: "abelgasque",
     version: "1.0.0",
     avatarImg: "assets/images/avatar.jpg",
