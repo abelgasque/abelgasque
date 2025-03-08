@@ -8,11 +8,6 @@ RUN npm install --force
 
 COPY . .
 
-ENV APP_DEBUG='production'
-ENV APP_NAME='cv-abelgasque'
-ENV APP_VERSION='1.0.0'
-ENV APP_AVATAR_IMG='https://github.com/abelgasque.png'
-
 RUN npm run build-prod
 RUN ng build --configuration=production
 
