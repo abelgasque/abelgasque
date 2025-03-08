@@ -45,7 +45,7 @@ jobs:
         APP_AVATAR_IMG: https://github.com/${{ github.actor }}.png
   
     - name: Build Angular App
-      run: npm run build -- --output-path=dist --base-href /abelgasque/ --configuration=production
+      run: npm run build --configuration=production
 
     - name: Install Github Pages
       run: npm i -g angular-cli-ghpages
