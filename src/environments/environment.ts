@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  webhookUrl: 'https://n8n-1-103-2-8ak6.onrender.com/webhook-test/abelgasque/contact'
 };
 
 /*

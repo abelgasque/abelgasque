@@ -10,7 +10,7 @@
       <div class="contact-info">
         <h3 class="wow fadeInUp">Vamos conversar!</h3>
         <p class="wow fadeInUp">
-          Não gosta de formulários? Me envie um 
+          Não gosta de formulários? Me envie um
           <a href="mailto:abelgasque20@gmail.com">e-mail</a>. 👋
         </p>
       </div>
@@ -18,54 +18,50 @@
 
     <div class="col-md-8">
       <!-- Contact Form -->
-      <form id="contact-form" class="contact-form mt-6" method="post" action="javascript:">
-        <div class="messages"></div>
-
+      <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="contact-form mt-6">
         <div class="row">
           <div class="column col-md-6">
-            <!-- Name input -->
             <div class="form-group">
-              <input type="text" class="form-control" name="InputName" id="InputName" 
-                     placeholder="Seu nome" required="required" 
-                     data-error="O nome é obrigatório." />
-              <div class="help-block with-errors"></div>
+              <input type="text" class="form-control" formControlName="name" placeholder="Seu nome" />
+              <div class="help-block text-danger"
+                *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+                O nome é obrigatório.
+              </div>
             </div>
           </div>
 
           <div class="column col-md-6">
-            <!-- Email input -->
             <div class="form-group">
-              <input type="email" class="form-control" id="InputEmail" name="InputEmail" 
-                     placeholder="Seu e-mail" required="required" 
-                     data-error="O e-mail é obrigatório." />
-              <div class="help-block with-errors"></div>
+              <input type="email" class="form-control" formControlName="email" placeholder="Seu e-mail" />
+              <div class="help-block text-danger"
+                *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+                Informe um e-mail válido.
+              </div>
             </div>
           </div>
 
           <div class="column col-md-12">
-            <!-- Subject input -->
             <div class="form-group">
-              <input type="text" class="form-control" id="InputSubject" name="InputSubject" 
-                     placeholder="Assunto" required="required" 
-                     data-error="O assunto é obrigatório." />
-              <div class="help-block with-errors"></div>
+              <input type="text" class="form-control" formControlName="subject" placeholder="Assunto" />
+              <div class="help-block text-danger"
+                *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid">
+                O assunto é obrigatório.
+              </div>
             </div>
           </div>
 
           <div class="column col-md-12">
-            <!-- Message input -->
             <div class="form-group">
-              <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" 
-                        placeholder="Mensagem" required="required" 
-                        data-error="A mensagem é obrigatória."></textarea>
-              <div class="help-block with-errors"></div>
+              <textarea class="form-control" formControlName="message" rows="5" placeholder="Mensagem"></textarea>
+              <div class="help-block text-danger"
+                *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+                A mensagem é obrigatória.
+              </div>
             </div>
           </div>
 
           <div class="column col-md-12">
-            <button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default">
-              Enviar Mensagem
-            </button>
+            <button type="submit" class="btn btn-default" [disabled]="contactForm.invalid">Enviar Mensagem</button>
           </div>
         </div>
       </form>

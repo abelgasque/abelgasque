@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { LightboxModule } from 'ngx-lightbox';
 import { NgImageSliderModule } from 'ng-image-slider';
@@ -46,6 +48,15 @@ import { NguCarouselModule } from '@ngu/carousel';
     TestimonialsComponent,
     NgbModule
   ],
-  imports: [CommonModule, LightboxModule, NgImageSliderModule, IvyCarouselModule, NguCarouselModule, NgbModule]
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    LightboxModule, 
+    NgImageSliderModule, 
+    IvyCarouselModule, 
+    NguCarouselModule, 
+    NgbModule
+  ]
 })
 export class SectionsModule {}
