@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - feature/v2.0.0
+      - main
 
 jobs:
   build:
