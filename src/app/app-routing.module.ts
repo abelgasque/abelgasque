@@ -5,11 +5,11 @@ import { LayoutComponent } from './theme/layout/layout.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: '',
     component: LayoutComponent,
     children: [
       {
