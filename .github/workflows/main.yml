@@ -24,20 +24,17 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '12.x'
+        node-version: '18.x'
 
     - name: Install dependencies
       run: npm install
 
-    - name: Build Environment
-      run: npm run build-prod
+    - name: Build Angular App
+      run: npm run deploy
       env:
         WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         WEBHOOK_USER: ${{ secrets.WEBHOOK_USER }}
         WEBHOOK_PASSWORD: ${{ secrets.WEBHOOK_PASSWORD }}
-
-    - name: Build Angular App
-      run: npm run build --configuration=production
 
     - name: Install Github Pages
       run: npm i -g angular-cli-ghpages
