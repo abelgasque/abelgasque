@@ -46,6 +46,7 @@ export class ContactComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
+        this.loading = false;
         alert('Erro ao enviar a mensagem. Tente novamente.');
       },
       complete: () => {
