@@ -10,10 +10,13 @@ import { environment } from 'src/environments/environment';
 })
 export class ContactComponent implements OnInit {
 
+  loading = false;
   contactForm!: FormGroup;
   webhookUrl = environment.webhookUrl;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
+  constructor(private fb: FormBuilder, private http: HttpClient) {
+    this.webhookUrl = `${environment.webhookUrl}/webhook/abelgasque/contact`;
+  }
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
@@ -30,7 +33,13 @@ export class ContactComponent implements OnInit {
       return;
     }
 
-    this.http.post(this.webhookUrl, this.contactForm.value).subscribe({
+    this.loading = true;
+
+    this.http.post(this.webhookUrl, this.contactForm.value, {
+      headers: {
+        'Authorization': 'Basic ' + btoa(environment.webhookUser + ':' + environment.webhookPassword)
+      }
+    }).subscribe({
       next: (res) => {
         alert('Mensagem enviada com sucesso!');
         this.contactForm.reset();
@@ -38,6 +47,9 @@ export class ContactComponent implements OnInit {
       error: (err) => {
         console.error(err);
         alert('Erro ao enviar a mensagem. Tente novamente.');
+      },
+      complete: () => {
+        this.loading = false;
       }
     });
   }

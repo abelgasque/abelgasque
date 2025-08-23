@@ -18,7 +18,11 @@
 
     <div class="col-md-8">
       <!-- Contact Form -->
-      <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="contact-form mt-6">
+      <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="contact-form mt-6 position-relative">
+        <div *ngIf="loading" class="loading-overlay">
+          <i class="fa fa-spinner fa-spin fa-2x"></i>
+        </div>
+
         <div class="row">
           <div class="column col-md-6">
             <div class="form-group">
@@ -61,7 +65,12 @@
           </div>
 
           <div class="column col-md-12">
-            <button type="submit" class="btn btn-default" [disabled]="contactForm.invalid">Enviar Mensagem</button>
+            <button type="submit" class="btn btn-default" [disabled]="contactForm.invalid || loading">
+              <span *ngIf="!loading">Enviar Mensagem</span>
+              <span *ngIf="loading">
+                <i class="fa fa-spinner fa-spin"></i> Enviando...
+              </span>
+            </button>
           </div>
         </div>
       </form>
