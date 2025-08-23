@@ -22,7 +22,7 @@ try {
     webhookPassword: WEBHOOK_PASSWORD || ''
   };
 
-  const filePath = path.join(envDir, 'environment.prod.ts');
+  const filePath = path.join(envDir, 'environment.ts');
   const fileContent = `export const environment = ${JSON.stringify(environmentVariables, null, 2)};\n`;
 
   fs.writeFileSync(filePath, fileContent);
