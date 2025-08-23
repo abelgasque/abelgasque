@@ -30,7 +30,11 @@ jobs:
       run: npm install
   
     - name: Build Angular App
-      run: npm run build --configuration=production
+      run: npm run deploy
+      env:
+        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        WEBHOOK_USER: ${{ secrets.WEBHOOK_USER }}
+        WEBHOOK_PASSWORD: ${{ secrets.WEBHOOK_PASSWORD }}
 
     - name: Install Github Pages
       run: npm i -g angular-cli-ghpages
