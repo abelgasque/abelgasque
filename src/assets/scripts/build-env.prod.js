@@ -10,7 +10,7 @@ const {
 } = process.env;
 
 try {
-  const envDir = path.join(__dirname, '../../src/environments');
+  const envDir = path.join(__dirname, '../../environments');
   if (!fs.existsSync(envDir)) {
     fs.mkdirSync(envDir, { recursive: true });
   }
