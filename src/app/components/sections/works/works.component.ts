@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-works',
@@ -6,41 +8,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./works.component.scss']
 })
 export class WorksComponent implements OnInit {
-  public workFilter: string;
-  public singleGallery1: any;
-  public albums: any = [];
+  baseUrl: string;
+  username: string;
+  token: string;
+  repos: any[] = [];
+  languages: string[] = [];
+  workFilter: string = 'all';
 
-  videoObject: Array<object> = [
-    {
-      video: 'https://www.youtube.com/watch?v=qf9z4ulfmYw',
-      posterImage: 'assets/images/works/3.svg'
-    }
-  ];
-
-  constructor() {
-    this.workFilter = 'all';
-    this.singleGallery1 = [
-      {
-        src: 'assets/images/works/1.svg',
-        caption: 'Project Management Illustration',
-        thumb: 'assets/images/works/1.svg'
-      }
-    ];
-
-    for (let i = 5; i >= 1; i--) {
-      const album = {
-        src: 'assets/images/works/' + i + '.svg',
-        caption: 'Image ' + i + ' caption here',
-        thumb: 'assets/images/works/' + i + '.svg'
-      };
-
-      this.albums.push(album);
-    }
+  constructor(private http: HttpClient) {
+    this.baseUrl = environment.githubApi;
+    this.token = environment.githubToken;
+    this.username = environment.githubUsername;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadRepos();
+  }
 
-  onChange(e) {
-    this.workFilter = e.target.value;
+  loadRepos() {
+    this.http
+      .get<any[]>(`${this.baseUrl}/users/${this.username}/repos?per_page=6`, {
+        headers: {
+          'Authorization': `Bearer ${this.token}`
+        }
+      })
+      .subscribe((data) => {
+        this.repos = data;
+
+        const langs = data
+          .map((repo) => repo.language)
+          .filter((lang) => lang !== null);
+
+        this.languages = Array.from(new Set(langs)).sort();
+      });
+  }
+
+  onChange(event: any) {
+    this.workFilter = event.target.value;
   }
 }
