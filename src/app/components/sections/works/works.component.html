@@ -1,6 +1,6 @@
 <div class="container">
   <!-- section title -->
-  <h2 class="section-title wow fadeInUp">Trabalhos recentes</h2>
+  <h2 class="section-title wow fadeInUp">Projetos</h2>
   <div class="spacer-60"></div>
 
   <!-- portfolio filter (desktop) -->
@@ -24,25 +24,11 @@
     </select>
   </div>
 
-
-  <!-- portfolio filter (mobile) -->
-  <div class="pf-filter-wrapper">
-    <select class="portfolio-filter-mobile" (change)="onChange($event)">
-      <option value="all">Todos</option>
-      <option value="github">GitHub</option>
-    </select>
-  </div>
-
   <!-- portfolio wrapper -->
   <div class="row portfolio-wrapper">
-    <!-- portfolio item (GitHub repos) -->
     <ng-container *ngFor="let repo of repos">
-      <div class="col-md-4 col-sm-6 grid-item" [ngClass]="{
-          art: workFilter === 'art',
-          creative: workFilter === 'creative',
-          design: workFilter === 'design',
-          branding: workFilter === 'branding'
-        }" *ngIf="workFilter === 'all' || workFilter.toLowerCase() === (repo.language?.toLowerCase() || 'all')">
+      <div class="col-md-4 col-sm-6 col-12 grid-item"
+        *ngIf="workFilter === 'all' || workFilter.toLowerCase() === (repo.language?.toLowerCase() || 'all')">
         <a [href]="repo.html_url" target="_blank" class="work-link">
           <div class="portfolio-item rounded shadow-dark">
             <div class="details">
