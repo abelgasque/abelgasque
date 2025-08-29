@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 import { animate, AUTO_STYLE, state, style, transition, trigger } from '@angular/animations';
 
@@ -47,58 +46,9 @@ export class LayoutComponent implements OnInit {
 
   public collapsedCard: string = 'collapsed';
 
-  constructor(public scrollSpy: ScrollSpyService, private location: Location) {
+  constructor(public scrollSpy: ScrollSpyService) {
     this.themeConfig = Config.config;
     this.windowWidth = window.innerWidth;
-
-    let currentURL = this.location.path();
-    const baseHref = this.location['_baseHref'];
-    if (baseHref) {
-      currentURL = baseHref + this.location.path();
-    }
-
-    switch (currentURL) {
-      case baseHref + '/theme/view/vertical/default':
-        this.themeConfig.theme = 'vertical';
-        this.themeConfig.themeType = 'default';
-        break;
-      case baseHref + '/theme/view/vertical/dark':
-        this.themeConfig.theme = 'vertical';
-        this.themeConfig.themeType = 'dark';
-        break;
-      case baseHref + '/theme/view/vertical/light':
-        this.themeConfig.theme = 'vertical';
-        this.themeConfig.themeType = 'light';
-        break;
-      case baseHref + '/theme/view/collapsed/default':
-        this.themeConfig.theme = 'collapsed';
-        this.themeConfig.themeType = 'default';
-        break;
-      case baseHref + '/theme/view/collapsed/dark':
-        this.themeConfig.theme = 'collapsed';
-        this.themeConfig.themeType = 'dark';
-        break;
-      case baseHref + '/theme/view/collapsed/light':
-        this.themeConfig.theme = 'collapsed';
-        this.themeConfig.themeType = 'light';
-        break;
-      case baseHref + '/theme/view/horizontal/default':
-        this.themeConfig.theme = 'horizontal';
-        this.themeConfig.themeType = 'default';
-        break;
-      case baseHref + '/theme/view/horizontal/dark':
-        this.themeConfig.theme = 'horizontal';
-        this.themeConfig.themeType = 'dark';
-        break;
-      case baseHref + '/theme/view/horizontal/light':
-        this.themeConfig.theme = 'horizontal';
-        this.themeConfig.themeType = 'light';
-        break;
-      default:
-        this.themeConfig.theme = 'vertical';
-        this.themeConfig.themeType = 'default';
-        break;
-    }
   }
 
   ngOnInit(): void {
