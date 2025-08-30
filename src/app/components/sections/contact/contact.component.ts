@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Analytics, logEvent } from '@angular/fire/analytics';
+import { getPerformance, trace } from '@angular/fire/performance';
+import { FirebasePerformance } from '@angular/fire/performance';
 
 import { environment } from 'src/environments/environment';
 
@@ -12,6 +14,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ContactComponent implements OnInit {
 
+  performance: FirebasePerformance;
   loading = false;
   contactForm!: FormGroup;
   webhookUrl: string;
@@ -21,6 +24,7 @@ export class ContactComponent implements OnInit {
     private fb: FormBuilder,
     private http: HttpClient,
   ) {
+    this.performance = getPerformance();
     this.webhookUrl = `${environment.webhook.url}/webhook/abelgasque/contact`;
   }
 
@@ -39,14 +43,15 @@ export class ContactComponent implements OnInit {
       return;
     }
 
-    this.loading = true;
 
-    if (environment.production) {
-      logEvent(this.analytics, 'formulario_contacto', {
-        categoria: 'contato',
-        label: `Formulario de Contato`
-      });
-    }
+    this.loading = true;
+    const t = trace(this.performance, 'processar_dados');
+    t.start();
+
+    logEvent(this.analytics, 'formulario_contacto', {
+      categoria: 'contato',
+      label: `Formulario de Contato`
+    });
 
     this.http.post(this.webhookUrl, this.contactForm.value, {
       headers: {
@@ -64,6 +69,7 @@ export class ContactComponent implements OnInit {
       },
       complete: () => {
         this.loading = false;
+        t.stop();
       }
     });
   }
