@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { Analytics, logEvent } from '@angular/fire/analytics';
 
-declare let gtag: Function;
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -14,10 +14,14 @@ export class ContactComponent implements OnInit {
 
   loading = false;
   contactForm!: FormGroup;
-  webhookUrl = environment.webhookUrl;
+  webhookUrl: string;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
-    this.webhookUrl = `${environment.webhookUrl}/webhook/abelgasque/contact`;
+  constructor(
+    private analytics: Analytics,
+    private fb: FormBuilder,
+    private http: HttpClient,
+  ) {
+    this.webhookUrl = `${environment.webhook.url}/webhook/abelgasque/contact`;
   }
 
   ngOnInit(): void {
@@ -38,15 +42,15 @@ export class ContactComponent implements OnInit {
     this.loading = true;
 
     if (environment.production) {
-      gtag('event', 'form_contact', {
-        event_category: 'contato',
-        event_label: `Formulario de Contato`
+      logEvent(this.analytics, 'formulario_contacto', {
+        categoria: 'contato',
+        label: `Formulario de Contato`
       });
     }
 
     this.http.post(this.webhookUrl, this.contactForm.value, {
       headers: {
-        'Authorization': 'Basic ' + btoa(environment.webhookUser + ':' + environment.webhookPassword)
+        'Authorization': 'Basic ' + btoa(environment.webhook.user + ':' + environment.webhook.password)
       }
     }).subscribe({
       next: (res) => {

@@ -24,7 +24,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { GalleryComponent } from './gallery/gallery.component';
 import { UiModalComponent } from './ui-modal/ui-modal.component';
 
-const analyticsId = environment.googleAnalyticsId;
+const analyticsId = environment.firebase.measurementId;
 
 @NgModule({
   declarations: [

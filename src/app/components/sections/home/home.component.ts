@@ -1,10 +1,12 @@
 import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
 import { trigger, transition, useAnimation } from '@angular/animations';
+import { Analytics, logEvent } from '@angular/fire/analytics';
+
 import { bounceIn } from 'ng-animate';
+
 import { environment } from 'src/environments/environment';
 
 declare let require: any;
-declare let gtag: Function;
 
 @Component({
   selector: 'app-home',
@@ -32,7 +34,9 @@ export class HomeComponent implements OnInit, AfterContentInit {
   @Input() themeType: string;
   public bounce: number = 1;
 
-  constructor() {
+  constructor(
+    private analytics: Analytics
+  ) {
     setInterval(() => {
       this.bounce = this.bounce < 3 ? this.bounce + 1 : 1;
     }, 3000);
@@ -56,9 +60,9 @@ export class HomeComponent implements OnInit, AfterContentInit {
       sectionHtml.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 
       if (environment.production) {
-        gtag('event', 'scroll_to_section', {
-          event_category: 'navegacao',
-          event_label: `Scroll para ${section}`
+        logEvent(this.analytics, 'scroll_to_section', {
+          categoria: 'navegacao',
+          label: `Scroll para ${section}`
         });
       }
     }
