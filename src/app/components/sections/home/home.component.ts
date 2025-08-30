@@ -1,8 +1,10 @@
 import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounceIn } from 'ng-animate';
+import { environment } from 'src/environments/environment';
 
 declare let require: any;
+declare let gtag: Function;
 
 @Component({
   selector: 'app-home',
@@ -13,7 +15,6 @@ declare let require: any;
       transition(
         '* => *',
         useAnimation(bounceIn, {
-          // Set the duration to 5seconds and delay to 2seconds
           params: {
             timing: 3,
             delay: 0,
@@ -37,7 +38,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
     }, 3000);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   ngAfterContentInit() {
     setTimeout(() => {
@@ -53,6 +54,13 @@ export class HomeComponent implements OnInit, AfterContentInit {
     const sectionHtml = document.querySelector('#' + section);
     if (sectionHtml !== null) {
       sectionHtml.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+
+      if (environment.production) {
+        gtag('event', 'scroll_to_section', {
+          event_category: 'navegacao',
+          event_label: `Scroll para ${section}`
+        });
+      }
     }
   }
 }
