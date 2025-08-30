@@ -59,12 +59,10 @@ export class HomeComponent implements OnInit, AfterContentInit {
     if (sectionHtml !== null) {
       sectionHtml.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 
-      if (environment.production) {
-        logEvent(this.analytics, 'scroll_to_section', {
-          categoria: 'navegacao',
-          label: `Scroll para ${section}`
-        });
-      }
+      logEvent(this.analytics, 'scroll_to_section', {
+        categoria: 'navegacao',
+        label: `Scroll para ${section}`
+      });
     }
   }
 }

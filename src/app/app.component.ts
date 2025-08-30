@@ -14,11 +14,9 @@ export class AppComponent implements OnInit {
   constructor(private analytics: Analytics) { }
 
   ngOnInit(): void {
-    if (environment.production) {
-      logEvent(this.analytics, 'usuario_abriu_o_site', {
-        categoria: 'navegacao',
-        label: 'Inicio'
-      });
-    }
+    logEvent(this.analytics, 'usuario_abriu_o_site', {
+      categoria: 'navegacao',
+      label: 'Inicio'
+    });
   }
 }
