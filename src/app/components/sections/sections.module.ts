@@ -5,7 +5,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { LightboxModule } from 'ngx-lightbox';
 import { NgImageSliderModule } from 'ng-image-slider';
-import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NguCarouselModule } from '@ngu/carousel';
+import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -17,10 +19,12 @@ import { ContactComponent } from './contact/contact.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 
+import { environment } from 'src/environments/environment';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { GalleryComponent } from './gallery/gallery.component';
 import { UiModalComponent } from './ui-modal/ui-modal.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NguCarouselModule } from '@ngu/carousel';
+
+const analyticsId = environment.googleAnalyticsId;
 
 @NgModule({
   declarations: [
@@ -56,7 +60,8 @@ import { NguCarouselModule } from '@ngu/carousel';
     NgImageSliderModule, 
     IvyCarouselModule, 
     NguCarouselModule, 
-    NgbModule
+    NgbModule,
+    NgxGoogleAnalyticsModule.forRoot(analyticsId)
   ]
 })
 export class SectionsModule {}

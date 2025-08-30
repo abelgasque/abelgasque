@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
+declare let gtag: Function;
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -34,6 +36,13 @@ export class ContactComponent implements OnInit {
     }
 
     this.loading = true;
+
+    if (environment.production) {
+      gtag('event', 'form_contact', {
+        event_category: 'contato',
+        event_label: `Formulario de Contato`
+      });
+    }
 
     this.http.post(this.webhookUrl, this.contactForm.value, {
       headers: {

@@ -5,5 +5,6 @@ export const environment = {
   webhookPassword: 'admin',
   githubApi: "https://api.github.com",
   githubToken: "your_github_token",
-  githubUsername: 'abelgasque'
+  githubUsername: 'abelgasque',
+  googleAnalyticsId: 'G-XXXXXXXXX'
 };
