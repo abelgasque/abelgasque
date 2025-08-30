@@ -10,6 +10,7 @@ const {
   GITHUB_URL,
   GITHUB_TOKEN,
   GITHUB_USERNAME,
+  GOOGLE_ANALYTICS_ID,
 } = process.env;
 
 try {
@@ -25,7 +26,8 @@ try {
     webhookPassword: WEBHOOK_PASSWORD || '',
     githubApi: GITHUB_URL || '',
     githubToken: GITHUB_TOKEN || '',
-    githubUsername: GITHUB_USERNAME || ''
+    githubUsername: GITHUB_USERNAME || '',
+    googleAnalyticsId: GOOGLE_ANALYTICS_ID || ''
   };
 
   const filePath = path.join(envDir, 'environment.ts');
