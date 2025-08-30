@@ -16,9 +16,9 @@ export class WorksComponent implements OnInit {
   workFilter: string = 'all';
 
   constructor(private http: HttpClient) {
-    this.baseUrl = environment.githubApi;
-    this.token = environment.githubToken;
-    this.username = environment.githubUsername;
+    this.baseUrl = environment.github.api;
+    this.token = environment.github.token;
+    this.username = environment.github.username;
   }
 
   ngOnInit(): void {

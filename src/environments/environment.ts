@@ -1,10 +1,23 @@
 export const environment = {
   production: false,
-  webhookUrl: 'http://localhost:5432',
-  webhookUser: 'admin',
-  webhookPassword: 'admin',
-  githubApi: "https://api.github.com",
-  githubToken: "your_github_token",
-  githubUsername: 'abelgasque',
-  googleAnalyticsId: 'G-XXXXXXXXX'
+  webhook: {
+    url: 'http://localhost:5432',
+    user: 'admin',
+    password: 'admin'
+  },
+  github: {
+    api: "https://api.github.com",
+    token: "your_github_token",
+    username: 'abelgasque'
+  },
+  firebase: {
+    apiKey: "your_key",
+    authDomain: "YOUR_APP.firebaseapp.com",
+    databaseURL: "https://YOUR_APP.firebaseio.com",
+    projectId: "YOUR_APP",
+    storageBucket: "YOUR_APP.firebasestorage.app",
+    messagingSenderId: "000000000",
+    appId: "XXXXXXXX",
+    measurementId: "G-XXXXXXX"
+  }
 };

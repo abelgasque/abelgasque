@@ -10,6 +10,13 @@ const {
   GITHUB_URL,
   GITHUB_TOKEN,
   GITHUB_USERNAME,
+  FIREBASE_API_KEY,
+  FIREBASE_AUTH_DOMAIN,
+  FIREBASE_PROJECT_ID,
+  FIREBASE_STORAGE_BUCKET,
+  FIREBASE_MESSAGING_SENDER_ID,
+  FIREBASE_APP_ID,
+  FIREBASE_MEASUREMENT_ID
 } = process.env;
 
 try {
@@ -20,12 +27,25 @@ try {
 
   const environmentVariables = {
     production: true,
-    webhookUrl: WEBHOOK_URL || '',
-    webhookUser: WEBHOOK_USER || '',
-    webhookPassword: WEBHOOK_PASSWORD || '',
-    githubApi: GITHUB_URL || '',
-    githubToken: GITHUB_TOKEN || '',
-    githubUsername: GITHUB_USERNAME || ''
+    webhook: {
+      url: WEBHOOK_URL || '',
+      user: WEBHOOK_USER || '',
+      password: WEBHOOK_PASSWORD || ''
+    },
+    github: {
+      api: GITHUB_URL || '',
+      token: GITHUB_TOKEN || '',
+      username: GITHUB_USERNAME || ''
+    },
+    firebase: {
+      apiKey: FIREBASE_API_KEY,
+      authDomain: FIREBASE_AUTH_DOMAIN,
+      projectId: FIREBASE_PROJECT_ID,
+      storageBucket: FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+      appId: FIREBASE_APP_ID,
+      measurementId: FIREBASE_MEASUREMENT_ID
+    },
   };
 
   const filePath = path.join(envDir, 'environment.ts');

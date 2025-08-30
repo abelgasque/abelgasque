@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { Analytics, logEvent } from '@angular/fire/analytics';
 
-declare let gtag: Function;
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +11,13 @@ declare let gtag: Function;
 export class AppComponent implements OnInit {
   title = 'Okk';
 
-  constructor() { }
+  constructor(private analytics: Analytics) { }
 
   ngOnInit(): void {
     if (environment.production) {
-      gtag('event', 'site_aberto', {
-        event_category: 'navegacao',
-        event_label: 'Usuário abriu o site',
-        value: 1
+      logEvent(this.analytics, 'usuario_abriu_o_site', {
+        categoria: 'navegacao',
+        label: 'Inicio'
       });
     }
   }
