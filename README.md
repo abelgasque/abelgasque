@@ -14,7 +14,10 @@ Aqui estão alguns dos meus projetos em destaque:
 
 - **Chat Web**
   Uma aplicação de chat web em tempo real, hospedada em: [https://chat.abelgasque.com](https://chat.abelgasque.com)
-  Construído com tecnologias modernas para comunicação instantânea e escalável.
+  Construído com tecnologias modernas para comunicação instantânea e escalável com.NET, NodeJS e Angular.
+
+- **Landing Page - Wahana**
+  Página web para capturar leads para agentes virtuais de WahtsApp: [https://wahana.abelgasque.com](https://wahana.abelgasque.com)
 
 # 🌐 Redes Sociais:
 [![Gmail](https://img.shields.io/badge/Gmail-D14836.svg?logo=gmail&logoColor=white)](mailto:abelgasque20@gmail.com)
